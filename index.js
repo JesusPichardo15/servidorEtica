@@ -78,10 +78,10 @@ const server = app.listen(port,()=>{
 })
 
 const conection = mysql.createConnection({
-    host : 'localhost',
-    database : 'deberescs',
-    user : 'jesusPichardo',
-    password : '01293458Je.'
+    host : 'bn4nadxq6yjssjlgvlu5-mysql.services.clever-cloud.com',
+    database : 'bn4nadxq6yjssjlgvlu5',
+    user : 'upasvbsuqyznwbzx',
+    password : 'QvRdDizXrOs6evMS683I',
 })
 
 conection.connect((err)=>{
