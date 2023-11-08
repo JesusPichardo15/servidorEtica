@@ -83,6 +83,18 @@ router.post("/postPoints",(req,res)=>{
     })
 })
 
+router.get("/getPoints",(req,res)=>{
+    let data = req.body;
+    conection.query("SELECT points FROM ahorcados WHERE user = 'jesus' ",(e,r)=>{
+        if(e){
+            console.error(e)
+        }else{
+            res.json(r);
+        }
+    })
+})
+
+
 app.use("/api",router)
 
 const server = app.listen(port,()=>{
