@@ -73,8 +73,7 @@ router.post("/register",(req,res)=>{
 
 router.post("/postPoints",(req,res)=>{
     let data = req.body;
-    console.log(data)
-    values = [data.points];
+    values = [data.points,data.user];
     conection.query("UPDATE ahorcado SET points= ? WHERE user = ?",values,(e,r)=>{
         if(e){
             console.log(e)
