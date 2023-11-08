@@ -79,7 +79,6 @@ router.post("/postPoints",(req,res)=>{
             console.log(e)
         }else{
             console.log("el cliente se a modificado");
-            res.send(true);
        }
     })
 })
