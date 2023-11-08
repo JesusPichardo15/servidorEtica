@@ -73,8 +73,8 @@ router.post("/register",(req,res)=>{
 
 router.post("/postPoints",(req,res)=>{
     let data = req.body;
-    values = [data.points,data.user, data.attemps];
-    conection.query("UPDATE ahorcado SET points= ?, attemps = ? WHERE user = ?",values,(e,r)=>{
+    values = [data.points,data.user];
+    conection.query("UPDATE ahorcado SET points= ? WHERE user = ?",values,(e,r)=>{
         if(e){
             console.log(e)
         }else{
@@ -85,7 +85,7 @@ router.post("/postPoints",(req,res)=>{
 
 router.get("/getPoints",(req,res)=>{
     const user = 'jesus'
-    conection.query("SELECT points, attemps FROM ahorcado WHERE user = ?",[user],(e,r)=>{
+    conection.query("SELECT points FROM ahorcado WHERE user = ?",[user],(e,r)=>{
         if(e){
             console.error(e)
         }else{
