@@ -71,6 +71,19 @@ router.post("/register",(req,res)=>{
     })
 })
 
+router.post("/postPoints",(req,res)=>{
+    let data = req.body;
+    console.log(data)
+    values = [data.points];
+    conection.query("UPDATE ahorcado SET points= ? WHERE user = ?",values,(e,r)=>{
+        if(e){
+            console.log(e)
+        }else{
+            console.log("el cliente se a modificado");
+        }
+    })
+})
+
 app.use("/api",router)
 
 const server = app.listen(port,()=>{
