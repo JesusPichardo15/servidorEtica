@@ -84,7 +84,8 @@ router.post("/postPoints",(req,res)=>{
 })
 
 router.get("/getPoints",(req,res)=>{
-    conection.query("SELECT points FROM ahorcado WHERE jesus ",(e,r)=>{
+    const user = 'jesus'
+    conection.query("SELECT points FROM ahorcado WHERE user = ?",[user],(e,r)=>{
         if(e){
             console.error(e)
         }else{
